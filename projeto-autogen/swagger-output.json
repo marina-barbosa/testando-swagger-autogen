@@ -1,0 +1,51 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "API Hello",
+    "description": "Description bla bla bla"
+  },
+  "host": "localhost:3333",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/api": {
+      "get": {
+        "description": "Rota para retornar uma mensagem de saudação.",
+        "parameters": [
+          {
+            "name": "coisas",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "O texto da mensagem de saudação."
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "Resposta padrão.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "mensagem": {
+                      "type": "string",
+                      "description": "A mensagem de saudação."
+                    },
+                    "coisas": {
+                      "type": "string",
+                      "description": "O valor do parâmetro."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
